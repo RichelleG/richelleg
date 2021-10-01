@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Untitled Document</title>
+    <script type="text/javascript">
+	document.write("Hoy es: " +  new Date());
+	</script>
+</head>
+
+<body>
+	<h1> Que puede hacer JavaScript? </h1>
+	<p id = "demo"> JavaScript puede cambiar el contenido de HTML </p>
+	<button type="button" onclick="document.getElementById('demo').innerHTML='Hola JavaScript!!'">
+    	Presioname!
+    </button>
+    
+	<h1> JS can change images </h1>
+    
+    <img id="cambio" onclick="imagenNueva()" src="lb_off.png" width="100" height="100">
+	<p> Click en la imagen para cambiar de apagado a prendido </p>
+    <script> 
+		function imagenNueva() {
+			var image = document.getElementById('cambio');
+			if (image.src.match("lb_on")) {
+				image.src = "lb_off.png";
+			} else {
+				image.src = "lb_on.png";
+			}
+		}
+	</script>
+    
+    
+    <h1> JavaScript can Validate Input</h1>
+    
+    <p> Please input a number between 1 and 10: </p>
+    
+    <input id="numb" type="number">
+    
+    <button type="button" onclick="myFunction()"> Submit </button>
+    
+    <p id="demo"> </p>
+    
+    <script> 
+    	function myFunction(){
+			var x, text;
+			
+			//Get the value of the input field with id=n"numb"
+			x = document.getElementById("numb").value;
+			
+			//If x is not a number or less than one or greater than 10
+			if (isNaN(x) || x < 1 || x > 10){
+				text = "Input not valid";
+			} else {
+				text = "Input OK";
+			}
+			document.getElementById("demo").innerHTML = text;
+		}
+    </script>
+    
+    
+</body>
+</html>
